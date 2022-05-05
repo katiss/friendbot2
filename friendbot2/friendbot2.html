@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <title>Friend Bot 2</title>
+    <head>Friend Bot</head><link href="main.css" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+<body>
+
+<h2>Friendly Friend Bot IS BACK</h2>
+    <p><i>This time with 100% more math!</i></p>
+    <p><img src="images/robot.png"></p>
+    
+    
+<p>Friend Bot hates you now. Do some math to win it back! 5x5 =</p>
+    <input id="math" />
+<button onclick="checkMath()">Answer!</button>
+    <p id="yourFate"></p>
+
+
+<script>
+    function checkMath() {
+    
+    let myPromise = new Promise((resolve, reject) => {
+        let a= document.getElementById("math").value;
+        if (a == 25) {
+            resolve("Correct! I love you.") 
+        }
+        else { 
+            reject("Incorrect. I will annihilate the human race.");
+        }
+        
+    });    
+myPromise.then((message)  => {
+    document.getElementById("yourFate").innerHTML = message;
+}).catch((message) => { 
+  document.getElementById("yourFate").innerHTML = message;
+})
+
+    }
+    
+
+    
+
+</script>
+
+</body>
+</html> 
